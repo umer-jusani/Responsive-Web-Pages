@@ -16,25 +16,39 @@
   <body>
     <header class="primary-header">
       <div class="container">
-        <a href="#"><img src="images/logo.svg" alt="Manage" /></a>
-        <nav class="primary-navigation">
-          <ul role="list" class="nav-list">
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">community</a></li>
-          </ul>
-        </nav>
-        <button class="button">Get Started</button>
+        <div class="nav-wrapper">
+          <a href="#"><img src="images/logo.svg" alt="Manage" /></a>
+
+          <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+            <img
+              class="icon-hamburger"
+              src="images/icon-hamburger.svg"
+              alt=""
+            />
+            <img class="icon-close" src="images/icon-close.svg" alt="" />
+          </button>
+
+          <nav class="primary-navigation">
+            <ul role="list" class="nav-list" id="primary-navigation">
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Product</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">community</a></li>
+            </ul>
+          </nav>
+          <button class="button">Get Started</button>
+
+          
+        </div>
       </div>
     </header>
 
     <main>
-      <section>
+      <section class="padding-block-900">
         <div class="even-columns">
           <div>
-            <h1 class=".fs-primary-heading .fw-bold">
+            <h1 class="fs-primary-heading fw-bold">
               Bring everyone together to build better products
             </h1>
             <p>
@@ -49,11 +63,11 @@
         </div>
       </section>
 
-      <section>
+      <section class="padding-block-900">
         <div class="container">
           <div class="even-columns">
             <div>
-              <h2 class="fs-seondary-heading fw-bold">
+              <h2 class="fs-secondary-heading fw-bold">
                 Whats different about Manage?
               </h2>
               <p>
@@ -97,12 +111,12 @@
         </div>
       </section>
 
-      <section>
-        <h2 class="fs-seondary-heading fw-bold">What they've said</h2>
-        <button>Get Started</button>
+      <section class="padding-block-900">
+        <h2 class="fs-secondary-heading fw-bold">What they've said</h2>
+        <button class="button">Get Started</button>
       </section>
 
-      <section class="bg-primary-400 text-neutral-100">
+      <section class="bg-accent-400 | text-neutral-100 | padding-block-700">
         <div class="container">
           <div class="even-columns">
             <div>
@@ -111,24 +125,49 @@
               </p>
             </div>
             <div>
-              <button class="button button-inverse">Get Started</button>
+              <button class="button" data-type="inverted">Get Started</button>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <foot er class="bg-neutral-900 text-neutral-100">
+    <footer class="bg-neutral-900 text-neutral-100 | padding-block-700">
       <div class="container">
         <div class="even-columns">
           <div>
             <a href="#"><img src="images/logo.svg" alt="Manage" /></a>
+            <ul role="list" aria-label="social-icons">
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+            </ul>
           </div>
-          <div></div>
-          <div></div>
+          <div>
+            <nav>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div>
+            <form action="">
+              <input type="email" name="" id="" />
+              <button class="button">Go</button>
+              <p>Copyright 2020. All Rights Reserved</p>
+            </form>
+          </div>
         </div>
       </div>
-    </foot>
+    </footer>
 
     <script type="module" src="/main.js"></script>
   </body>
