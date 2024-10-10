@@ -272,30 +272,48 @@ body {
   justify-content: space-between;
 }
 
-.primary-header {
-  border: 2px solid black;
-}
-
-.button {
-  display: none;
-}
-
 .mobile-nav-toggle {
   display: none;
 }
 
 .nav-list {
+  display: flex;
   font-size: var(--fs-nav);
+  gap: clamp(var(--size-400), 5vw, var(--size-700));
+}
+
+.nav-list a {
+  color: var(--clr-primary-400);
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--clr-accent-400);
+  text-decoration: none;
 }
 
 @media (max-width: 50em) {
   .primary-navigation {
     display: none;
     position: fixed;
-    inset: 7rem var(--size-400) auto;
-    background-color: black;
+    inset: 6rem var(--size-400) auto;
+    max-width: 20rem;
+    margin-left: auto;
+    background-color: var(--clr-neutral-100);
+    padding: var(--size-800);
     border-radius: var(--size-200);
-    padding: var(--size-700);
+    box-shadow: 0 0 0.25em rgb(0, 0, 0, 0.15);
+    border: 2px solid black;
+    box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05), 0 0 0 1000vmax rgba(0 0 0 / 0.75);
+  }
+
+  .primary-header[data-overlay]::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(rgb(0 0 0 /0), rgb(0 0 0 / 0.8));
   }
 
   .primary-navigation[data-visible] {
@@ -311,18 +329,31 @@ body {
   }
 
   .nav-list a {
-    color: white;
+    color: var(--clr-primary-400);
+    text-decoration: none;
+  }
+
+  .nav-list a:hover,
+  .nav-list a:focus {
+    color: var(--clr-accent-400);
     text-decoration: none;
   }
 
   .mobile-nav-toggle {
+    display: block;
+    position: fixed;
+    /* top: var(--size-500); */
+    right: var(--size-400);
     cursor: pointer;
     border: none;
     background: transparent;
     padding: 0.25em;
-    display: block;
   }
   .mobile-nav-toggle .icon-close {
+    display: none;
+  }
+
+  .hide_Small {
     display: none;
   }
 }
