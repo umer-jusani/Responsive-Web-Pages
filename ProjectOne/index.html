@@ -17,7 +17,11 @@
     <header class="primary-header">
       <div class="container">
         <div class="nav-wrapper">
-          <a href="#"><img src="images/logo.svg" alt="Manage" /></a>
+          <a href="#">
+            <svg class="logo" width="146" height="24">
+              <use xlink:href="images/logo.svg#logo"></use>
+            </svg>
+          </a>
 
           <!-- humburger -->
           <button
@@ -129,15 +133,17 @@
         <button class="button">Get Started</button>
       </section>
 
-      <section class="bg-accent-400 | text-neutral-100 | padding-block-700">
+      <section
+        class="cta | bg-accent-400 | text-neutral-100 | padding-block-700"
+      >
         <div class="container">
-          <div class="even-columns">
+          <div class="even-columns | Vertical-Align-Center">
             <div>
-              <p class="fs-secondary-heading">
+              <p class="fs-secondary-heading | text-align-center">
                 Simplify how your team works today.
               </p>
             </div>
-            <div>
+            <div class="justify-self-end-md">
               <button class="button" data-type="inverted">Get Started</button>
             </div>
           </div>
@@ -145,22 +151,36 @@
       </section>
     </main>
 
-    <footer class="bg-neutral-900 text-neutral-100 | padding-block-700">
+    <footer class="primary-footer | bg-neutral-900 text-neutral-100 | padding-block-700">
       <div class="container">
         <div class="even-columns">
           <div>
-            <a href="#"><img src="images/logo.svg" alt="Manage" /></a>
-            <ul role="list" aria-label="social-icons">
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
+            <a href="#">
+              <svg class="logo" width="146" height="24">
+                <use xlink:href="images/logo.svg#logo"></use>
+              </svg>
+            </a>
+            <ul class="social-list" role="list" aria-label="social-icons">
+              <li>
+                <a href="#"><img src="./images/icon-facebook.svg" alt="" class="social-icon" /> </a>
+              </li>
+              <li>
+                <a href="#"><img src="./images/icon-instagram.svg" alt="" class="social-icon"/> </a>
+              </li>
+              <li>
+                <a href="#"><img src="./images/icon-pinterest.svg" alt="" class="social-icon"/> </a>
+              </li>
+              <li>
+                <a href="#"><img src="./images/icon-twitter.svg" alt="" class="social-icon"/> </a>
+              </li>
+              <li>
+                <a href="#"><img src="./images/icon-youtube.svg" alt="" class="social-icon"/> </a>
+              </li>
             </ul>
           </div>
           <div>
-            <nav>
-              <ul class="flow" style="--flow-spacer: 1em">
+            <nav class="footer-nav">
+              <ul class="flow" style="--flow-spacer: 1em" role="list">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#">Products</a></li>

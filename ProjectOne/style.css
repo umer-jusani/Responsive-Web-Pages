@@ -143,6 +143,7 @@ p[data-width="wide"] {
 
 /* button */
 .button {
+  display: inline-flex;
   border: 0;
   text-decoration: none;
   cursor: pointer;
@@ -174,6 +175,7 @@ p[data-width="wide"] {
 }
 
 /* navigation */
+
 .primary-header {
   margin-top: var(--size-700);
 }
@@ -270,9 +272,69 @@ p[data-width="wide"] {
   }
 }
 
+/* footer-navigation */
+.primary-footer .logo use {
+  fill: var(--logo-color, var(--clr-accent-100));
+}
+
+.footer-nav {
+  columns: 2;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: var(--clr-neutral-100);
+}
+
+.footer-nav a:is(:hover, :focus) {
+  color: var(--clr-accent-400);
+}
+
+/* social-list */
+.social-list {
+  display: flex;
+  gap: var(--size-500);
+}
+
+.social-icon {
+  width: var(--size-600);
+}
+
+@media (min-width: 50em) {
+  .social-list {
+    gap: var(--size-300);
+  }
+  .social-icon {
+    width: var(--size-500);
+  }
+}
+
+/* cta */
+.cta {
+  position: relative;
+  isolation: isolate;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: url("images/bg-tablet-pattern.svg");
+  background-position: -15rem -5rem, 80rem -42rem;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+}
+
 /* creating utility classess */
 :where(.flow :not(:first-child)) {
   margin-top: var(--flow-spacer, 3em);
+}
+
+.text-align-center {
+  @media (max-width: 50em) {
+    text-align: center;
+  }
 }
 
 /* TextColors */
@@ -362,6 +424,21 @@ p[data-width="wide"] {
   gap: 1rem;
 }
 
+.Vertical-Align-Center {
+  align-items: center;
+  justify-content: center;
+}
+
+.justify-self-end-md {
+  justify-self: center;
+}
+
+@media (min-width: 50em) {
+  .justify-self-end-md {
+    justify-self: end;
+  }
+}
+
 @media (min-width: 50em) {
   .even-columns {
     grid-auto-flow: column;
@@ -369,4 +446,4 @@ p[data-width="wide"] {
   }
 }
 
-/* part 6 (0:12) */
+/* part 7 (23:32) */
