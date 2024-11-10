@@ -581,9 +581,18 @@ input:where([type="text"], [type="email"]) {
   font-size: var(--fs-600);
 }
 
-.padding-block-900 {
-  padding-block: var(--size-900);
+.padding-block {
+  padding-block: var(--size-700);
 }
+
+
+@media (min-width: 50em) {
+  .padding-block {
+    padding-block: var(--size-900);
+  }
+
+}
+
 .padding-block-700 {
   padding-block: var(--size-700);
 }
