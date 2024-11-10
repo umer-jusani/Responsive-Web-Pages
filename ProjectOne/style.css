@@ -8,6 +8,7 @@
   --clr-accent-500: hsl(12, 88%, 50%);
   --clr-primary-400: hsl(228, 39%, 23%);
   --clr-neutral-900: hsl(232, 12%, 13%);
+  --clr-neutral-200: hsl(0, 0%, 97%);
   --clr-neutral-100: hsl(0, 0%, 100%);
 
   /* Font Family */
@@ -136,10 +137,12 @@ p:not([class]) {
   opacity: 0.7;
   max-width: 32ch;
 }
-
 p[data-width="wide"] {
   max-width: 42ch;
 }
+
+/* @media (min-width: 50em) {
+} */
 
 /* button */
 .button {
@@ -167,6 +170,10 @@ p[data-width="wide"] {
 .button[data-type="inverted"]:focus-visible {
   background-color: var(--clr-accent-100);
   color: var(--clr-accent-300);
+}
+
+.button[data-glow="none"] {
+  box-shadow: none;
 }
 
 .button:hover,
@@ -262,6 +269,7 @@ p[data-width="wide"] {
     border: none;
     background: transparent;
     padding: 0.25em;
+    z-index: 1;
   }
   .mobile-nav-toggle .icon-close {
     display: none;
@@ -332,6 +340,28 @@ p[data-width="wide"] {
   margin-top: 1rem;
 }
 
+.primary-footer-form {
+  display: grid;
+  align-content: space-between;
+}
+
+.primary-footer-form form {
+  /* display: flex; */
+  gap: var(--size-600);
+}
+
+input:where([type="text"], [type="email"]) {
+  border-radius: 100vw;
+  border: 0;
+  padding: var(--size-200) var(--size-300);
+}
+
+@media (min-width: 50em) {
+  input:where([type="text"], [type="email"]) {
+    padding: var(--size-300) var(--size-400);
+  }
+}
+
 .footer-nav {
   columns: 2;
 }
@@ -343,6 +373,97 @@ p[data-width="wide"] {
 
 .footer-nav a:is(:hover, :focus) {
   color: var(--clr-accent-400);
+}
+
+/* numbered Items */
+.numbered-items {
+  counter-reset: count;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.numbered-items h3 {
+  counter-increment: count;
+  counter-increment: count;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  column-gap: var(--size-300);
+}
+
+.numbered-items h3::before {
+  content: "0" counter(count);
+  background-color: var(--clr-accent-400);
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-300);
+  padding: var(--size-200) var(--size-500);
+  border-radius: 100vw;
+}
+
+.numbered-items_body {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 50em) {
+  .numbered-items {
+    margin-top: var(--size-100);
+  }
+
+  div[data-center="true"] {
+    width: fit-content;
+    margin-inline: auto;
+    text-align: center;
+    justify-items: center;
+  }
+}
+
+@media (min-width: 30em) {
+  .numbered-items_body {
+    grid-column: 2 / -1;
+  }
+}
+
+@media (max-width: 40em) {
+  .numbered-items_title {
+    column-gap: var(--size-200);
+  }
+
+  .numbered-items h3::before {
+    padding: var(--size-200) var(--size-400);
+  }
+}
+
+/* hero section */
+
+.hero-section-content {
+  align-self: center;
+}
+
+.hero-section-image{
+  justify-self: center;
+}
+
+@media (max-width: 50em) {
+  .Hero-Section .even-columns > div:nth-child(2) {
+    order: 1;
+  }
+  .Hero-Section .even-columns > div:nth-child(1) {
+    order: 2;
+  }
+
+  .hero-section-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* row-gap: 0.8rem; */
+  }
+
+  .hero-section-content > p {
+    margin-inline: auto;
+    padding-bottom: var(--size-400);
+  }
 }
 
 /* social-list */
@@ -467,6 +588,10 @@ p[data-width="wide"] {
   padding-block: var(--size-700);
 }
 
+.margin-bottom-700 {
+  margin-block-end: var(--size-700);
+}
+
 .container {
   --max-width: 1110px;
   --padding: 1rem;
@@ -497,6 +622,40 @@ p[data-width="wide"] {
 @media (min-width: 50em) {
   .justify-self-end-md {
     justify-self: end;
+  }
+}
+
+/* slider */
+
+.carousel {
+  text-align: center;
+}
+
+.slider {
+  display: flex;
+  list-style: none;
+}
+
+.slider > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--size-300);
+  background: var(--clr-neutral-200);
+  text-align: center;
+
+  padding: var(--size-300) var(--size-600);
+}
+
+.slider > * > img {
+  width: 5.5rem;
+  margin-inline: auto;
+}
+
+@media (max-width: 50em) {
+  .slider > * > img {
+    width: 4rem;
   }
 }
 
